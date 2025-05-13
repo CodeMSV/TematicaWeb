@@ -65,10 +65,8 @@ body {
 .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: var(--indicator-height);
+  bottom: 0; left: 0;
+  width: 100%; height: var(--indicator-height);
   background: linear-gradient(
     to right,
     var(--indicator-color1) 0%,
@@ -135,24 +133,49 @@ main > div {
 }
 
 /* ========================================
-   Personajes: tarjetas más pequeñas
+   Personajes: diseño mejorado de tarjetas
    ======================================== */
 #personajes .card {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  height: 100%;
-  position: relative;
-  cursor: pointer;
-  overflow: visible; /* para que los efectos no se recorten */
+  border: none;
+  border-radius: 1rem;
+  overflow: visible;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
 }
+#personajes .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* Todas las imágenes de card con mismo tamaño y más pequeñas */
 #personajes .card-img-top {
-  width: 80%;
-  margin: 1rem auto 0;
+  width: 270px;
+  height: 320px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   display: block;
-  height: auto;
+  margin: 1rem auto 0;
+  border-bottom: 2px solid #eee;
 }
+
 #personajes .card-body {
+  background: rgba(255,255,255,0.9);
+  padding: 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   text-align: center;
+}
+#personajes .card-title {
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+#personajes .card-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
 }
 
 /* ========================================
@@ -185,7 +208,7 @@ main > div {
 /* ========================================
    Hover effects corregidos para Personajes
    ======================================== */
-/* 1) Pétalos: corazón pop */
+/* Pétalos: corazón pop */
 @keyframes heartPop {
   0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
   50%  { transform: translate(-50%, -50%) scale(3); opacity: 1; }
@@ -198,13 +221,12 @@ main > div {
   width: 100px; height: 100px;
   background: url("../img/petalos-efecto.webp") no-repeat center;
   background-size: contain;
-  transform: translate(-50%, -50%) scale(0);
   animation: heartPop 5s forwards;
   z-index: 10;
   pointer-events: none;
 }
 
-/* 2) Cactus: aparecen/desaparecen lateralmente */
+/* Cactus: aparecen/desaparecen lateralmente */
 @keyframes cactusSide {
   0%   { opacity: 0; transform: translateX(-100px); }
   25%  { opacity: 1; transform: translateX(0); }
@@ -240,7 +262,7 @@ main > div {
   pointer-events: none;
 }
 
-/* 3) Burbuja: efect o de ascenso */
+/* Burbuja: efecto de ascenso */
 @keyframes bubbleRise {
   0%   { opacity: 0; transform: translate(-50%, 100px) scale(0.5); }
   25%  { opacity: 1; transform: translate(-50%,  50px) scale(1); }
@@ -254,7 +276,6 @@ main > div {
   width: 30px; height: 30px;
   background: url("../img/burbuja-efecto.webp") no-repeat center;
   background-size: contain;
-  transform: translate(-50%, 100px);
   animation: bubbleRise 5s forwards;
   z-index: 10;
   pointer-events: none;
