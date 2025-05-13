@@ -31,99 +31,6 @@ body {
   font-family: "Cal Sans", sans-serif;
 }
 
-/* === Sección de inicio: texto blanco y foto a la derecha === */
-#inicio .row {
-  align-items: center;
-}
-#inicio p {
-  color: #fff;
-  margin-bottom: 0;
-}
-#inicio img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Contenedor de vídeo responsive */
-.video-container {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-.video-container video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* === Personajes: tarjetas === */
-#personajes .card {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  height: 100%;
-}
-#personajes .card-body {
-  text-align: center;
-}
-
-/* ========================================
-   Primera sección con degradado inferior
-   ======================================== */
-.has-bg-image {
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0) 0%,
-      #ffffff 90%
-    ),
-    var(--bg-image);
-  background-position:
-    bottom,
-    center top;
-  background-repeat:
-    no-repeat,
-    no-repeat;
-  background-size:
-    100% 150px,
-    cover;
-}
-
-/* ========================================
-   Segunda sección con blur + degradado
-   ======================================== */
-.has-bg-image2 {
-  position: relative;
-  overflow: hidden;
-}
-
-.has-bg-image2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
-  filter: blur(8px);
-  z-index: -2;
-}
-
-.has-bg-image2::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 150px;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    rgba(255,255,255,0) 100%
-  );
-  z-index: -1;
-}
-
 #mainNav {
   background-color: var(--navbar-bg);
   padding: var(--navbar-padding);
@@ -132,7 +39,6 @@ body {
               box-shadow var(--transition-speed);
   backdrop-filter: blur(6px);
 }
-
 #mainNav.shrink {
   background-color: var(--navbar-bg-shrink);
   padding: var(--navbar-padding-shrink);
@@ -143,7 +49,6 @@ body {
   height: calc(var(--navbar-height) - 20px);
   transition: height var(--transition-speed);
 }
-
 #mainNav.shrink .navbar-logo {
   height: calc((var(--navbar-height) * 0.75) - 20px);
 }
@@ -154,11 +59,9 @@ body {
   padding-bottom: 0.5rem;
   transition: color var(--transition-speed);
 }
-
 .navbar-nav .nav-link.active {
   color: #fff;
 }
-
 .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
@@ -181,4 +84,178 @@ body {
 .img-fluid {
   max-width: 70%;
   height: auto;
+}
+
+/* ----------------------------------
+   Separación entre todas las secciones
+   ---------------------------------- */
+main > div {
+  margin-bottom: 3rem;
+}
+
+/* ----------------------------------
+   Sección INICIO
+   ---------------------------------- */
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+#inicio .row {
+  align-items: center;
+}
+#inicio p {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+#inicio img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------
+   Vídeo responsive sin audio
+   ---------------------------------- */
+.video-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.video-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   Personajes: tarjetas más pequeñas
+   ======================================== */
+#personajes .card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  overflow: visible; /* para que los efectos no se recorten */
+}
+#personajes .card-img-top {
+  width: 80%;
+  margin: 1rem auto 0;
+  display: block;
+  height: auto;
+}
+#personajes .card-body {
+  text-align: center;
+}
+
+/* ========================================
+   Segunda sección con blur + degradado
+   ======================================== */
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
+
+/* ========================================
+   Hover effects corregidos para Personajes
+   ======================================== */
+/* 1) Pétalos: corazón pop */
+@keyframes heartPop {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  50%  { transform: translate(-50%, -50%) scale(3); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+.petalos:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100px; height: 100px;
+  background: url("../img/petalos-efecto.webp") no-repeat center;
+  background-size: contain;
+  transform: translate(-50%, -50%) scale(0);
+  animation: heartPop 5s forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 2) Cactus: aparecen/desaparecen lateralmente */
+@keyframes cactusSide {
+  0%   { opacity: 0; transform: translateX(-100px); }
+  25%  { opacity: 1; transform: translateX(0); }
+  75%  { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-100px); }
+}
+@keyframes cactusSideR {
+  0%   { opacity: 0; transform: translateX(100px); }
+  25%  { opacity: 1; transform: translateX(0); }
+  75%  { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100px); }
+}
+.cactus:hover::before {
+  content: "";
+  position: absolute;
+  top: 40%; left: 10%;
+  width: 40px; height: 40px;
+  background: url("../img/cactus-efecto.webp") no-repeat center;
+  background-size: contain;
+  animation: cactusSide 5s forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+.cactus:hover::after {
+  content: "";
+  position: absolute;
+  top: 40%; right: 10%;
+  width: 40px; height: 40px;
+  background: url("../img/cactus-efecto.webp") no-repeat center;
+  background-size: contain;
+  animation: cactusSideR 5s forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 3) Burbuja: efect o de ascenso */
+@keyframes bubbleRise {
+  0%   { opacity: 0; transform: translate(-50%, 100px) scale(0.5); }
+  25%  { opacity: 1; transform: translate(-50%,  50px) scale(1); }
+  75%  { opacity: 1; transform: translate(-50%,   0  ) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50px) scale(0.5); }
+}
+.burbuja:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 30px; height: 30px;
+  background: url("../img/burbuja-efecto.webp") no-repeat center;
+  background-size: contain;
+  transform: translate(-50%, 100px);
+  animation: bubbleRise 5s forwards;
+  z-index: 10;
+  pointer-events: none;
 }
