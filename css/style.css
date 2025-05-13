@@ -148,15 +148,15 @@ main > div {
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-/* Todas las imágenes de card con mismo tamaño y más pequeñas */
+/* Todas las imágenes de card con mismo tamaño, ocupando todo el ancho de la card */
 #personajes .card-img-top {
-  width: 270px;
-  height: 320px;
+  width: 100%;
+  height: 400px;
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   display: block;
-  margin: 1rem auto 0;
+  margin: 0;
   border-bottom: 2px solid #eee;
 }
 
@@ -167,42 +167,17 @@ main > div {
   border-bottom-right-radius: 1rem;
   text-align: center;
 }
+/* Intercambio de fuentes: título usa Cal Sans, texto usa Righteous */
 #personajes .card-title {
-  font-family: "Righteous", cursive;
+  font-family: "Powerpuff Girls", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 #personajes .card-text {
+  font-family: "Righteous", cursive;
   font-size: 0.95rem;
   color: #555;
   line-height: 1.4;
-}
-
-/* ========================================
-   Segunda sección con blur + degradado
-   ======================================== */
-.has-bg-image2 {
-  position: relative;
-  overflow: hidden;
-}
-.has-bg-image2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
-  filter: blur(8px);
-  z-index: -2;
-}
-.has-bg-image2::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
-  z-index: -1;
 }
 
 /* ========================================
@@ -279,4 +254,29 @@ main > div {
   animation: bubbleRise 5s forwards;
   z-index: 10;
   pointer-events: none;
+}
+
+/* Segunda sección con blur + degradado */
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
 }
