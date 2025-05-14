@@ -1,0 +1,163 @@
+@import url("https://fonts.cdnfonts.com/css/powerpuff-girls");
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --navbar-bg: #000;
+  --navbar-bg-shrink: rgba(0, 0, 0, 0.9);
+  --navbar-padding: 0.7rem 1rem;
+  --navbar-padding-shrink: 0.5rem 1rem;
+  --navbar-height: 60px;
+  --indicator-height: 4px;
+  --indicator-color1: #33ace3;
+  --indicator-color2: #e78c89;
+  --indicator-color3: #81cb71;
+  --transition-speed: 0.3s;
+  --bg-image: url("../img/backgroundtop.webp"); 
+  --bg-image2: url("../img/backgroundtile.webp");
+}
+
+body {
+  margin: 0;
+  padding-top: var(--navbar-height);
+  font-family: "Powerpuff Girls", sans-serif;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+}
+
+#mainNav,
+#mainNav .navbar-brand,
+#mainNav .nav-link,
+.text-content {
+  font-family: "Cal Sans", sans-serif;
+}
+
+#mainNav {
+  background-color: var(--navbar-bg);
+  padding: var(--navbar-padding);
+  transition: padding var(--transition-speed),
+              background-color var(--transition-speed),
+              box-shadow var(--transition-speed);
+  backdrop-filter: blur(6px);
+  background-image: var(--bg-image); 
+  background-size: cover;
+  background-position: center center;
+}
+
+#mainNav.shrink {
+  background-color: var(--navbar-bg-shrink);
+  padding: var(--navbar-padding-shrink);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.navbar-logo {
+  height: calc(var(--navbar-height) - 20px);
+  transition: height var(--transition-speed);
+}
+
+#mainNav.shrink .navbar-logo {
+  height: calc((var(--navbar-height) * 0.75) - 20px);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #fff;
+  padding-bottom: 0.5rem;
+  transition: color var(--transition-speed);
+}
+
+.navbar-nav .nav-link.active {
+  color: #fff;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: var(--indicator-height);
+  background: linear-gradient(
+    to right,
+    var(--indicator-color1) 0%,
+    var(--indicator-color1) 33.33%,
+    var(--indicator-color2) 33.33%,
+    var(--indicator-color2) 66.66%,
+    var(--indicator-color3) 66.66%,
+    var(--indicator-color3) 100%
+  );
+  border-radius: 4px 4px 0 0;
+}
+
+.img-fluid {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Sección ENEMIGOS */
+#enemigos {
+  padding: 2rem 1rem;
+}
+
+#enemigos h1 {
+  font-family: "Cal Sans", sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#enemigos p {
+  font-family: "Righteous", cursive;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#enemigos .card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+}
+
+#enemigos .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+#enemigos .card-title {
+  font-family: "Powerpuff Girls", sans-serif;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#enemigos .card-text {
+  font-family: "Righteous", cursive;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+#enemigos .card-img-top {
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#enemigos .card-body {
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+#enemigos .card:hover .card-img-top {
+  transform: scale(1.05);
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enemigos - Las Supernenas</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/styleEnemigos.css" />
+  <link href="https://fonts.cdnfonts.com/css/powerpuff-girls" rel="stylesheet" />
+  <script defer src="../js/bootstrap.bundle.js"></script>
+  <script defer src="../js/script.js"></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+  <header>
+    <nav id="mainNav" class="navbar fixed-top navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+          <img src="../img/logo.webp" alt="Logo" class="navbar-logo me-2" />
+        </a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
+                aria-controls="navbarNavContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarNavContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#personajes">Personajes</a></li>
+            <li class="nav-item"><a class="nav-link" href="views/enemigos.html">Enemigos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#test">Test</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contactar">Contactar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <div class="has-bg-image">
+      <div class="container">
+        <section id="inicio" class="bg-transparent my-6 p-4">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <p>Las Supernenas</p>
+            </div>
+            <div class="col-12 col-md-7 text-end">
+              <img src="../img/showpano.webp" alt="Foto de las supernenas juntas." class="img-fluid" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+  <!-- ENEMIGOS -->
+  <main>
+    <section id="enemigos" class="py-5 bg-transparent text-dark">
+      <div class="container">
+        <h2 class="display-5 mb-4">Enemigos</h2>
+        <p class="lead">Los villanos más recordados que intentaron vencer a las Supernenas.</p>
+        <div class="row g-4">
+          <!-- Mojo Jojo -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 enemigo-card">
+              <img src="../img/mojojojo.webp" alt="Mojo Jojo" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Mojo Jojo</h5>
+                <p class="card-text">
+                  El archienemigo más icónico. Ex-asistente del Profesor, su inteligencia malvada lo convierte en un rival constante.
+                </p>
+                <p><strong>Capítulos destacados:</strong> "Los orígenes de Mojo", "La venganza de Mojo", "El plan maestro".</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Él -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 enemigo-card">
+              <img src="../img/el.webp" alt="Él" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Él</h5>
+                <p class="card-text">
+                  Criatura maligna y demoníaca. Manipula los miedos y emociones de las Supernenas para debilitarlas.
+                </p>
+                <p><strong>Capítulos destacados:</strong> "El día más oscuro", "Pesadillas en Saltadilla".</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- La Banda Gangrena -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 enemigo-card">
+              <img src="../img/bandag.webp" alt="Banda Gangrena" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">La Banda Gangrena</h5>
+                <p class="card-text">
+                  Pandilla de adolescentes problemáticos con una actitud rebelde. Su torpeza los convierte en enemigos poco eficientes.
+                </p>
+                <p><strong>Capítulos destacados:</strong> "Pelea de bandas", "La rebelión de los tontos".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="text-center py-4 bg-dark text-white">
+    © 2025 Las Supernenas
+  </footer>
+
+</body>
+</html>
