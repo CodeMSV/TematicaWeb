@@ -216,7 +216,37 @@ body {
   border-bottom-right-radius: 1rem;
 }
 
-/* Efecto hover en las imágenes de las tarjetas */
-#enemigos .card:hover .card-img-top {
+/* Efecto hover en las imágenes de las tarjetas,no se utiliza de momento */
+/*#enemigos .card:hover .card-img-top {
   transform: scale(1.05);
+}
+
+/* contenedor exclusivo para imágenes */
+.enemigo-card .img-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+/* ambas imágenes en posición absoluta dentro de img-container */
+.enemigo-card .img-container img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* GIF inicialmente oculto */
+.enemigo-card .img-container .gif-img {
+  opacity: 0;
+}
+
+/* al hacer hover sobre toda la card, intercambiamos opacidades */
+.enemigo-card:hover .img-container .gif-img {
+  opacity: 1;
+}
+.enemigo-card:hover .img-container .static-img {
+  opacity: 0;
 }
