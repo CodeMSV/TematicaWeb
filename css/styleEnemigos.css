@@ -94,11 +94,62 @@ body {
   height: auto;
 }
 
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
+
+#inicio .row {
+  align-items: center;
+}
+#inicio p {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+#inicio img {
+  width: 100%;
+  height: auto;
+}
+
+
 /* Sección ENEMIGOS */
 #enemigos {
   padding: 2rem 1rem;
 }
 
+/* Título principal de la sección ENEMIGOS */
 #enemigos h1 {
   font-family: "Cal Sans", sans-serif;
   text-align: center;
@@ -107,6 +158,7 @@ body {
   color: #fff;
 }
 
+/* Párrafo descriptivo de la sección ENEMIGOS */
 #enemigos p {
   font-family: "Righteous", cursive;
   font-size: 1.2rem;
@@ -115,6 +167,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Estilo general de las tarjetas */
 #enemigos .card {
   border: none;
   border-radius: 1rem;
@@ -122,22 +175,25 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: rgba(255, 255, 255, 0.95);
-  margin-bottom: 2rem;
 }
 
+/* Efecto hover en las tarjetas */
 #enemigos .card:hover {
   transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
+/* Título de las tarjetas */
 #enemigos .card-title {
   font-family: "Powerpuff Girls", sans-serif;
   font-size: 1.4rem;
   color: #333;
   text-align: center;
   margin-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
+/* Texto descriptivo dentro de las tarjetas */
 #enemigos .card-text {
   font-family: "Righteous", cursive;
   font-size: 1rem;
@@ -145,19 +201,22 @@ body {
   text-align: center;
 }
 
+/* Imagen superior de las tarjetas */
 #enemigos .card-img-top {
   height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
+/* Contenedor del cuerpo de las tarjetas */
 #enemigos .card-body {
-  padding: 1.2rem;
+  padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.9);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
+/* Efecto hover en las imágenes de las tarjetas */
 #enemigos .card:hover .card-img-top {
   transform: scale(1.05);
 }
