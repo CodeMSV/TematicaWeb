@@ -1,0 +1,190 @@
+@import url("https://fonts.cdnfonts.com/css/powerpuff-girls");
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --navbar-bg: #000;
+  --navbar-bg-shrink: rgba(0, 0, 0, 0.9);
+  --navbar-padding: 0.7rem 1rem;
+  --navbar-padding-shrink: 0.5rem 1rem;
+  --navbar-height: 60px;
+  --indicator-height: 4px;
+  --indicator-color1: #33ace3;
+  --indicator-color2: #e78c89;
+  --indicator-color3: #81cb71;
+  --transition-speed: 0.3s;
+  --bg-image: url("../img/backgroundtop.webp");
+  --bg-image2: url("../img/backgroundtile.webp");
+}
+
+body {
+  margin: 0;
+  padding-top: var(--navbar-height);
+  font-family: "Powerpuff Girls", sans-serif;
+}
+
+#mainNav,
+#mainNav .navbar-brand,
+#mainNav .nav-link,
+.text-content {
+  font-family: "Cal Sans", sans-serif;
+}
+
+#mainNav {
+  background-color: var(--navbar-bg);
+  padding: var(--navbar-padding);
+  transition: padding var(--transition-speed),
+              background-color var(--transition-speed),
+              box-shadow var(--transition-speed);
+  backdrop-filter: blur(6px);
+}
+#mainNav.shrink {
+  background-color: var(--navbar-bg-shrink);
+  padding: var(--navbar-padding-shrink);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.navbar-logo {
+  height: calc(var(--navbar-height) - 20px);
+  transition: height var(--transition-speed);
+}
+#mainNav.shrink .navbar-logo {
+  height: calc((var(--navbar-height) * 0.75) - 20px);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #fff;
+  padding-bottom: 0.5rem;
+  transition: color var(--transition-speed);
+}
+.navbar-nav .nav-link.active {
+  color: #fff;
+}
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: var(--indicator-height);
+  background: linear-gradient(
+    to right,
+    var(--indicator-color1) 0%,
+    var(--indicator-color1) 33.33%,
+    var(--indicator-color2) 33.33%,
+    var(--indicator-color2) 66.66%,
+    var(--indicator-color3) 66.66%,
+    var(--indicator-color3) 100%
+  );
+  border-radius: 4px 4px 0 0;
+}
+
+.img-fluid {
+  max-width: 70%;
+  height: auto;
+}
+
+/* ----------------------------------
+   Separación entre todas las secciones
+   ---------------------------------- */
+main > div {
+  margin-bottom: 3rem;
+}
+
+/* ----------------------------------
+   Sección INICIO
+   ---------------------------------- */
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+#inicio .row {
+  align-items: center;
+}
+#inicio p {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+#inicio img {
+  width: 100%;
+  height: auto;
+}
+
+.bg-blossom {
+  background-color: #ff69b4;
+  transition: all 0.5s ease-in-out;
+}
+
+.bg-bubbles {
+  background-color: #add8e6;
+  transition: all 0.5s ease-in-out;
+}
+
+.bg-buttercup {
+  background-color: #90ee90;
+  transition: all 0.5s ease-in-out;
+}
+
+.hero-img {
+  max-width: 80%;
+  max-height: 80%;
+  transition: transform 0.5s ease;
+}
+
+.option:hover .hero-img {
+  transform: scale(1.1);
+}
+
+.expand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s ease-in-out;
+}
+
+#hero-detail h1 {
+  font-size: 3rem;
+}
+
+#hero-detail p {
+  font-size: 1.25rem;
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out;
+}
+
+.zoom-in {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transform: scale(1.05);
+  transition: all 0.6s ease-in-out;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

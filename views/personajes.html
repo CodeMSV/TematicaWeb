@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supernenas</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/stylePersonajes.css" />
+  <link href="https://fonts.cdnfonts.com/css/powerpuff-girls" rel="stylesheet" />
+  <script defer src="../js/bootstrap.bundle.js"></script>
+  <script defer src="../js/personajes.js"></script>
+    
+</head>
+<body>
+    <header>
+    <nav id="mainNav" class="navbar fixed-top navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+          <img src="/img/logo.webp" alt="Logo" class="navbar-logo me-2" />
+        </a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
+                aria-controls="navbarNavContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarNavContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#personajes">Personajes</a></li>
+            <li class="nav-item"><a class="nav-link" href="enemigos.html">Enemigos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#test">Test</a></li>
+            <li class="nav-item"><a class="nav-link" href="views/contact.html">Contactar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid vh-100 d-flex p-0" id="main-view">
+    <div class="col bg-blossom d-flex align-items-center justify-content-center option" data-hero="blossom">
+      <img src="/img/petalos.webp" class="hero-img" alt="Blossom" />
+    </div>
+    <div class="col bg-bubbles d-flex align-items-center justify-content-center option" data-hero="bubbles">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Bubbles_PPG.png" class="hero-img" alt="Bubbles" />
+    </div>
+    <div class="col bg-buttercup d-flex align-items-center justify-content-center option" data-hero="buttercup">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/79/Buttercup_PPG.png" class="hero-img" alt="Buttercup" />
+    </div>
+  </div>
+
+  <div class="container-fluid vh-100 d-none flex-column p-5" id="detail-view">
+    <button class="btn btn-light mb-4" id="back-btn">← Back</button>
+    <div id="hero-detail" class="text-white">
+      <!-- Hero description will go here -->
+    </div>
+  </div>
+  
+  <footer class="text-center py-4 bg-dark text-white">
+    © 2025 Las Supernenas
+  </footer>
+  
+</body>
+</html>
