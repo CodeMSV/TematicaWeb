@@ -140,6 +140,7 @@ main > div {
 .video-container {
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   border-radius: 8px;
 }
 .video-container video {
