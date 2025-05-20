@@ -6,7 +6,7 @@
     <title>Contact - Las Supernenas</title>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../css/styleEnemigos.css" />
+  <link rel="stylesheet" href="../css/styleContact.css" />
   <link href="https://fonts.cdnfonts.com/css/powerpuff-girls" rel="stylesheet" />
   <script defer src="../js/bootstrap.bundle.js"></script>
   <script defer src="../js/script.js"></script>
@@ -56,37 +56,41 @@
       </div>
     </div>
   
-    <section id="contacto" class="has-bg-image2 py-5">
+    <section id="contacto" class="py-5 bg-transparent text-dark has-bg-image2">
   <div class="container">
-    <h1 class="text-center mb-4">¡Contactanos!</h1>
-    <p class="text-center mb-5">¿Tienes una pregunta, una misión o simplemente quieres decir "Hola"? 💬</p>
+    <h2 class="display-5 text-center mb-4">Contacta con nosotros</h2>
+    <p class="lead text-center mb-5">¿Tienes una pregunta, una misión o simplemente quieres decir "Hola"? 💬</p>
 
     <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card p-4 enemigo-card">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="name" placeholder="Tu nombre" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="tu@email.com" required />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary px-4 py-2">Enviar 💌</button>
-            </div>
-          </form>
+      <div class="col-12 col-md-8">
+        <div class="card shadow border-0">
+          <div class="card-body p-4 p-md-5">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="col-12 mb-4">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary px-4 py-2">Enviar 💌</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="text-center mt-5">
-      <img src="../img/ppg-flying.gif" alt="Powerpuff Girls" class="img-fluid" style="max-height: 200px;" />
+      <img src="../img/ppg-flying.gif" alt="Powerpuff Girls" class="img-fluid" style="max-height: 200px;">
     </div>
   </div>
 </section>

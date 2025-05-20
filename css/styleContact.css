@@ -105,6 +105,31 @@ main > div {
   background-repeat: no-repeat, no-repeat;
   background-size: 100% 150px, cover;
 }
+
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
+
 #inicio .row {
   align-items: center;
 }

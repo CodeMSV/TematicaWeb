@@ -149,24 +149,6 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Título principal de la sección ENEMIGOS */
-#enemigos h1 {
-  font-family: "Cal Sans", sans-serif;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-/* Párrafo descriptivo de la sección ENEMIGOS */
-#enemigos p {
-  font-family: "Righteous", cursive;
-  font-size: 1.2rem;
-  color: black;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 /* Estilo general de las tarjetas */
 #enemigos .card {
   border: none;
@@ -214,11 +196,6 @@ body {
   background: rgba(255, 255, 255, 0.9);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-}
-
-/* Efecto hover en las imágenes de las tarjetas,no se utiliza de momento */
-/*#enemigos .card:hover .card-img-top {
-  transform: scale(1.05);
 }
 
 /* contenedor exclusivo para imágenes */
