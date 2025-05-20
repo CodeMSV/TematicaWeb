@@ -109,9 +109,25 @@ main > div {
   align-items: center;
 }
 #inicio p {
-  color: #fff;
   font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg, 
+    #00a8ff 0%,      
+    #00a8ff 22%,
+    #ff4081 28%,     
+    #ff4081 56%,
+    #4caf50 62%,     
+    #4caf50 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  /* Sombra para mayor legibilidad */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
   margin-bottom: 0;
+  display: inline-block;
 }
 #inicio img {
   width: 100%;
@@ -282,24 +298,3 @@ main > div {
 }
 
 
-.supernenas-gradient {
-  font-size: 2.5rem;
-  font-weight: bold;
-  background: linear-gradient(
-    90deg, 
-    #00a8ff 0%,      
-    #00a8ff 22%,
-    #ff4081 28%,     
-    #ff4081 56%,
-    #4caf50 62%,     
-    #4caf50 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  /* Sombra para mayor legibilidad */
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
-  margin-bottom: 0;
-  display: inline-block;
-}
