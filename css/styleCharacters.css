@@ -1,0 +1,212 @@
+@import url("https://fonts.cdnfonts.com/css/powerpuff-girls");
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --navbar-bg: #000;
+  --navbar-bg-shrink: rgba(0, 0, 0, 0.9);
+  --navbar-padding: 0.7rem 1rem;
+  --navbar-padding-shrink: 0.5rem 1rem;
+  --navbar-height: 60px;
+  --indicator-height: 4px;
+  --indicator-color1: #33ace3;
+  --indicator-color2: #e78c89;
+  --indicator-color3: #81cb71;
+  --transition-speed: 0.3s;
+  --bg-image: url("../img/backgroundtop.webp");
+  --bg-image2: url("../img/backgroundtile.webp");
+}
+
+/* NAVBAR FIXED */
+#mainNav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--navbar-bg);
+  padding: var(--navbar-padding);
+  transition: padding var(--transition-speed),
+              background-color var(--transition-speed),
+              box-shadow var(--transition-speed);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+#mainNav.shrink {
+  background-color: var(--navbar-bg-shrink);
+  padding: var(--navbar-padding-shrink);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.navbar-logo {
+  height: calc(var(--navbar-height) - 20px);
+  transition: height var(--transition-speed);
+}
+#mainNav.shrink .navbar-logo {
+  height: calc((var(--navbar-height) * 0.75) - 20px);
+}
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--indicator-height);
+  background: linear-gradient(
+    to right,
+    var(--indicator-color1) 0%,
+    var(--indicator-color1) 33.33%,
+    var(--indicator-color2) 33.33%,
+    var(--indicator-color2) 66.66%,
+    var(--indicator-color3) 66.66%,
+    var(--indicator-color3) 100%
+  );
+  border-radius: 4px 4px 0 0;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* FONDO GENERAL */
+body {
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+/* SECCIÓN VÍDEOS */
+.videos-section {
+  position: relative;
+  background: transparent;
+  padding: 0 2rem;
+}
+
+/* IMAGEN CENTRAL */
+.center-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  max-width: 30%;
+}
+
+.videos-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  height: 80vh;
+  position: relative;
+  margin-top: var(--navbar-height);
+}
+
+.video-column {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: all 1s ease;
+  z-index: 1;
+}
+
+/* Colores estáticos según columna */
+.video-column:nth-child(1) .video-bg {
+  background-color: var(--indicator-color1);
+}
+.video-column:nth-child(2) .video-bg {
+  background-color: var(--indicator-color2);
+}
+.video-column:nth-child(3) .video-bg {
+  background-color: var(--indicator-color3);
+}
+
+.video-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+/* Vídeo oculto inicialmente */
+.video-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem 1rem 1rem;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.overlay h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+.overlay .excerpt {
+  margin: 0 0 0.5rem;
+}
+.more-text {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 1s ease;
+}
+
+/* Hover: muestra vídeo, zoom y texto */
+.video-column:hover .video-bg {
+  background-color: transparent;
+}
+.video-column:hover .video-bg video {
+  opacity: 1;
+  transform: scale(1.4);
+}
+.video-column:hover .more-text {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* Oculta las columnas no activas y expande la activa */
+.videos-row:hover .video-column:not(:hover) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s ease;
+}
+.video-column:hover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+  z-index: 3;
+}
