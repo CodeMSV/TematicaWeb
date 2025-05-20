@@ -152,7 +152,6 @@ main > div {
   /* Sombra para mayor legibilidad */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
   margin-bottom: 0;
-  display: inline-block;
 }
 #inicio img {
   width: 100%;
