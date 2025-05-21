@@ -94,17 +94,7 @@ main > div {
 /* ----------------------------------
    Sección INICIO
    ---------------------------------- */
-.has-bg-image {
-  position: relative;
-  margin-top: calc(-1 * var(--navbar-height));
-  padding-top: var(--navbar-height);
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
-    var(--bg-image);
-  background-position: bottom, top center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100% 150px, cover;
-}
+
 #inicio .row {
   align-items: center;
 }
@@ -149,29 +139,6 @@ main > div {
 }
 
 
-.has-bg-image2 {
-  position: relative;
-  overflow: hidden;
-}
-.has-bg-image2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
-  filter: blur(8px);
-  z-index: -2;
-}
-.has-bg-image2::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
-  z-index: -1;
-}
 
 .card-title {
   font-family: 'Cal Sans', sans-serif;
@@ -289,3 +256,38 @@ body.dark-mode footer {
 
 
 
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
