@@ -242,3 +242,112 @@ body {
 .enemigo-card:hover .img-container .static-img {
   opacity: 0;
 }
+
+/* Modo oscuro variables y estilos */
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+  background-image: url("../img/backgroundtilenight.png");
+}
+
+body.dark-mode #mainNav {
+  background-color: #121212;
+}
+
+body.dark-mode #mainNav.shrink {
+  background-color: rgba(18, 18, 18, 0.9);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-nav .nav-link {
+  color: #ddd;
+}
+
+body.dark-mode .navbar-nav .nav-link.active {
+  color: #ddd;
+}
+
+body.dark-mode .navbar-nav .nav-link.active::after {
+  background: linear-gradient(
+    to right,
+    #4aa3ff 0%,
+    #4aa3ff 33.33%,
+    #ff6699 33.33%,
+    #ff6699 66.66%,
+    #81cb71 66.66%,
+    #81cb71 100%
+  );
+}
+
+body.dark-mode .has-bg-image {
+  background-image:
+    linear-gradient(to bottom, rgba(18,18,18,0) 0%, #121212 90%),
+    url("../img/backgroundtopnight.png");
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+
+body.dark-mode .has-bg-image2::before {
+  background-image: url("../img/backgroundtilenight.png");
+  filter: blur(8px);
+}
+
+body.dark-mode .has-bg-image2::after {
+  background: linear-gradient(to bottom, #121212 0%, rgba(18,18,18,0) 100%);
+}
+
+/* Estilos específicos de enemigos para modo oscuro */
+body.dark-mode #enemigos h2,
+body.dark-mode #enemigos .lead,
+body.dark-mode #enemigos .text-content {
+  color: #ddd;
+}
+
+body.dark-mode #enemigos .card {
+  background: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #enemigos .card-title {
+  color: #ddd;
+}
+
+body.dark-mode #enemigos .card-text {
+  color: #bbb;
+}
+
+body.dark-mode #enemigos .card-body {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+body.dark-mode #enemigos .card:hover {
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode footer {
+  background-color: #0a0a0a;
+  color: #ddd;
+}
+
+/* Estilos personalizados para el botón de modo oscuro */
+#darkModeToggle {
+  /* Quitar el borde por defecto */
+  border: 1px solid transparent;
+  /* Agregar una transición suave */
+  transition: border-color 0.3s ease;
+}
+
+/* Mostrar el borde solo en hover */
+#darkModeToggle:hover {
+  border-color: white;
+}
+
+/* Para el modo oscuro */
+body.dark-mode #darkModeToggle {
+  border: 1px solid transparent;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  border-color: white;
+}

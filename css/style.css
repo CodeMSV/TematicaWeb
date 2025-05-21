@@ -162,46 +162,34 @@ main > div {
   text-decoration: underline;
 }
 
-/* Modo oscuro variables y estilos */
-:root {
-  --navbar-bg-dark: #121212;
-  --navbar-bg-shrink-dark: rgba(18, 18, 18, 0.9);
-  --text-color-dark: #ddd;
-  --text-color-secondary-dark: #bbb;
-  --card-bg-dark: #1e1e1e;
-  --link-color-dark: #4aa3ff;
-  --link-hover-color-dark: #ff6699;
-  --bg-image-night: url("../img/backgroundtopnight.png");
-  --bg-image2-night: url("../img/backgroundtilenight.png");
-}
-
+/* Modo oscuro variables y estilos para la página de contacto */
 body.dark-mode {
   background-color: #121212;
-  color: var(--text-color-dark);
+  color: #ddd;
 }
 
 body.dark-mode #mainNav {
-  background-color: var(--navbar-bg-dark);
+  background-color: #121212;
 }
 
 body.dark-mode #mainNav.shrink {
-  background-color: var(--navbar-bg-shrink-dark);
+  background-color: rgba(18, 18, 18, 0.9);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .navbar-nav .nav-link {
-  color: var(--text-color-dark);
+  color: #ddd;
 }
 
 body.dark-mode .navbar-nav .nav-link.active {
-  color: var(--text-color-dark);
+  color: #ddd;
 }
 
 body.dark-mode .navbar-nav .nav-link.active::after {
   background: linear-gradient(
     to right,
-    var(--link-color-dark) 0%,
-    var(--link-color-dark) 33.33%,
+    #4aa3ff 0%,
+    #4aa3ff 33.33%,
     #ff6699 33.33%,
     #ff6699 66.66%,
     #81cb71 66.66%,
@@ -209,48 +197,22 @@ body.dark-mode .navbar-nav .nav-link.active::after {
   );
 }
 
-body.dark-mode .text-content,
-body.dark-mode p,
-body.dark-mode .lead {
-  color: var(--text-color-dark);
-}
-
-body.dark-mode .card {
-  background-color: var(--card-bg-dark);
-  color: var(--text-color-dark);
-  border: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
-
-body.dark-mode .card-text {
-  color: var(--text-color-secondary-dark);
-}
-
-body.dark-mode .card a {
-  color: var(--link-color-dark);
-}
-
-body.dark-mode .card a:hover {
-  color: var(--link-hover-color-dark);
-}
-
 body.dark-mode .has-bg-image {
   background-image:
     linear-gradient(to bottom, rgba(18,18,18,0) 0%, #121212 90%),
-    var(--bg-image-night);
+    url("../img/backgroundtopnight.png");
   background-position: bottom, top center;
   background-repeat: no-repeat, no-repeat;
   background-size: 100% 150px, cover;
 }
 
 body.dark-mode .has-bg-image2::before {
-  background-image: var(--bg-image2-night);
+  background-image: url("../img/backgroundtilenight.png");
   filter: blur(8px);
 }
 
-body.dark-mode footer {
-  background-color: #121212;
-  color: var(--text-color-dark);
+body.dark-mode .has-bg-image2::after {
+  background: linear-gradient(to bottom, #121212 0%, rgba(18,18,18,0) 100%);
 }
 
 /* Estilos personalizados para el botón de modo oscuro */
