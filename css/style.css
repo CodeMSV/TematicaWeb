@@ -253,6 +253,28 @@ body.dark-mode footer {
   color: var(--text-color-dark);
 }
 
+/* Estilos personalizados para el botón de modo oscuro */
+#darkModeToggle {
+  /* Quitar el borde por defecto */
+  border: 1px solid transparent;
+  /* Agregar una transición suave */
+  transition: border-color 0.3s ease;
+}
+
+/* Mostrar el borde solo en hover */
+#darkModeToggle:hover {
+  border-color: white;
+}
+
+/* Para el modo oscuro */
+body.dark-mode #darkModeToggle {
+  border: 1px solid transparent;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  border-color: white;
+}
+
 
 
 
