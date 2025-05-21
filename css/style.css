@@ -16,12 +16,39 @@
   --transition-speed: 0.3s;
   --bg-image: url("../img/backgroundtop.webp");
   --bg-image2: url("../img/backgroundtile.webp");
+  
+  /* Variables para modo claro */
+  --body-bg: #fff;
+  --text-color: #333;
+  --card-bg: #fff;
+  --card-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  --card-text: #333;
+  --card-link: #00a8ff;
+  --card-link-hover: #ff4081;
+  --footer-bg: #343a40;
+  --footer-text: #fff;
+}
+
+/* Variables para modo oscuro */
+body.dark-mode {
+  --body-bg: #121212;
+  --text-color: #ddd;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  --card-text: #bbb;
+  --card-link: #4aa3ff;
+  --card-link-hover: #ff6699;
+  --footer-bg: #0a0a0a;
+  --footer-text: #ddd;
 }
 
 body {
   margin: 0;
   padding-top: var(--navbar-height);
   font-family: "Powerpuff Girls", sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #mainNav,
@@ -131,6 +158,7 @@ main > div {
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   border-radius: 8px;
+  transition: box-shadow 0.3s ease;
 }
 .video-container video {
   display: block;
@@ -138,31 +166,120 @@ main > div {
   height: auto;
 }
 
+/* ----------------------------------
+   Sección HISTORIA
+   ---------------------------------- */
+#historia h2 {
+  font-family: "Powerpuff Girls", sans-serif;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
 
+#historia .lead {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* ----------------------------------
+   Sección CAPÍTULOS
+   ---------------------------------- */
+#capitulos h2 {
+  font-family: "Powerpuff Girls", sans-serif;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
 
 .card-title {
   font-family: 'Cal Sans', sans-serif;
   font-size: 1rem;
   font-weight: 700;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .card-text {
   font-family: 'Cal Sans', sans-serif;
-  color: #333;
+  color: var(--card-text);
+  transition: color 0.3s ease;
 }
 
 .card a {
-  color: #00a8ff;
+  color: var(--card-link);
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .card a:hover {
-  color: #ff4081;
+  color: var(--card-link-hover);
   text-decoration: underline;
 }
 
-/* Modo oscuro variables y estilos para la página de contacto */
+/* ----------------------------------
+   Footer
+   ---------------------------------- */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ----------------------------------
+   Backgrounds con imágenes
+   ---------------------------------- */
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--body-bg) 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+  /*transition: background-image 0.3s ease;*/
+}
+
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+  /*transition: background-image 0.3s ease;*/	
+}
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, var(--body-bg) 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+  /*transition: background-image 0.3s ease;*/
+}
+
+/* ==================================
+   Modo oscuro - aplicación específica
+   ================================== */
 body.dark-mode {
   background-color: #121212;
   color: #ddd;
@@ -215,6 +332,43 @@ body.dark-mode .has-bg-image2::after {
   background: linear-gradient(to bottom, #121212 0%, rgba(18,18,18,0) 100%);
 }
 
+/* Ajustes del video en modo oscuro */
+body.dark-mode .video-container {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes de cards para modo oscuro */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card-title {
+  color: #ddd;
+}
+
+body.dark-mode .card-text {
+  color: #bbb;
+}
+
+body.dark-mode .card a {
+  color: #4aa3ff;
+}
+
+body.dark-mode .card a:hover {
+  color: #ff6699;
+}
+
+/* Footer en modo oscuro */
+body.dark-mode footer {
+  background-color: #0a0a0a;
+  color: #ddd;
+}
+
 /* Estilos personalizados para el botón de modo oscuro */
 #darkModeToggle {
   /* Quitar el borde por defecto */
@@ -235,43 +389,4 @@ body.dark-mode #darkModeToggle {
 
 body.dark-mode #darkModeToggle:hover {
   border-color: white;
-}
-
-
-
-
-.has-bg-image {
-  position: relative;
-  margin-top: calc(-1 * var(--navbar-height));
-  padding-top: var(--navbar-height);
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
-    var(--bg-image);
-  background-position: bottom, top center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100% 150px, cover;
-}
-
-.has-bg-image2 {
-  position: relative;
-  overflow: hidden;
-}
-.has-bg-image2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
-  filter: blur(8px);
-  z-index: -2;
-}
-.has-bg-image2::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
-  z-index: -1;
 }
