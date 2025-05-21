@@ -15,9 +15,9 @@ const canvas = document.getElementById("gameCanvas");
   const birdImg = new Image();
   const enemyImg = new Image();
 
-  bgImg.src = "/img/backgroundtile.webp";
-  birdImg.src = "/img/ppg-flying.gif";
-  enemyImg.src = "/img/mojo-jojo-enemy.gif";
+  bgImg.src = "img/backgroundtile.webp";
+  birdImg.src = "img/ppg-flying.gif";
+  enemyImg.src = "img/mojo-jojo-enemy.gif";
 
   let imagesLoaded = 0;
   const totalImages = 3;
