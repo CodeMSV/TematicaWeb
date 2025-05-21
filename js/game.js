@@ -193,6 +193,10 @@ function restartGame() {
   startGame();
 }
 
+function exitGame() {
+  window.location.href = "../index.html";
+}
+
 // Controles
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space" || e.code === "ArrowUp") bird.flap();

@@ -42,7 +42,7 @@
   <main>
 <div id="menu">
   <h1>Powerpuff Fly</h1>
-  <img src="../img/imgjuego.png" alt="Powerpuff Girls Animation" class="menu-img">
+  <img src="../img/imgjuego.png" alt="Powerpuff Girls Image" class="img-fluid rounded w-75 mx-auto d-block" style="max-width: 300px;">
   <button id="startButton" disabled>Loading...</button>
 </div>
 
@@ -50,6 +50,7 @@
   <h1>Game Over</h1>
   <p id="finalScore" style="font-size: 20px;"></p>
   <button onclick="restartGame()">Volver a jugar</button>
+  <button id="exitButton" onclick="exitGame()">Salir</button>
 </div>
 
 <canvas id="gameCanvas"></canvas>
