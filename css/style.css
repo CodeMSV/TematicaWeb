@@ -204,7 +204,7 @@ main > div {
   --card-bg-dark: #1e1e1e;
   --link-color-dark: #4aa3ff;
   --link-hover-color-dark: #ff6699;
-  --bg-image-night: url("../img/backgroundtop-night.webp");
+  --bg-image-night: url("../img/backgroundtopnight.png");
   --bg-image2-night: url("../img/backgroundtilenight.png");
 }
 
