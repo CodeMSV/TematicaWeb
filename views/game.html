@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Powerpuff Fly</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: #000;
+    }
+
+    #menu {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    #menu h1 {
+      font-size: 48px;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    #menu button {
+      padding: 12px 30px;
+      font-size: 20px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="menu">
+  <h1>Powerpuff Fly</h1>
+  <button id="startButton" disabled>Loading...</button>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  // Cargar imágenes
+  const bgImg = new Image();
+  const birdImg = new Image();
+  bgImg.src = "/img/backgroundtile.webp"; // asegúrate que está en la misma carpeta
+  birdImg.src = "/img/ppg-flying.gif";
+
+  let imagesLoaded = 0;
+  const totalImages = 2;
+
+  function checkAllLoaded() {
+    imagesLoaded++;
+    if (imagesLoaded === totalImages) {
+      document.getElementById("startButton").disabled = false;
+      document.getElementById("startButton").innerText = "Start";
+      // fondo del menú
+      document.getElementById("menu").style.backgroundImage = `url('${bgImg.src}')`;
+    }
+  }
+
+  bgImg.onload = checkAllLoaded;
+  birdImg.onload = checkAllLoaded;
+
+  const gravity = 0.5;
+  const lift = -10;
+  let gameOver = false;
+  let score = 0;
+  let startTime = null;
+  let frames = 0;
+  let pipes = [];
+
+  let bird = {
+    x: 100,
+    y: 200,
+    width: 80,
+    height: 80,
+    velocity: 0,
+    update() {
+      this.velocity += gravity;
+      this.y += this.velocity;
+      if (this.y + this.height > canvas.height || this.y < 0) {
+        gameOver = true;
+      }
+    },
+    draw() {
+      ctx.save();
+      ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
+      ctx.rotate(Math.PI / 2);
+      ctx.drawImage(birdImg, -this.width / 2, -this.height / 2, this.width, this.height);
+      ctx.restore();
+    },
+    flap() {
+      this.velocity = lift;
+    }
+  };
+
+  class Pipe {
+    constructor() {
+      this.top = Math.random() * (canvas.height / 2);
+      this.gap = 240;
+      this.bottom = canvas.height - this.top - this.gap;
+      this.x = canvas.width;
+      this.w = 100;
+      this.speed = 3;
+    }
+
+    update() {
+      this.x -= this.speed;
+    }
+
+   draw() {
+  const radius = 20;
+  const lipHeight = 15;
+
+  // Tubo superior
+  ctx.fillStyle = "#7CFC00"; // verde claro
+  ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+  ctx.shadowBlur = 10;
+
+  // cuerpo del tubo superior
+  ctx.beginPath();
+  ctx.roundRect(this.x, 0, this.w, this.top, radius);
+  ctx.fill();
+
+  // borde superior (más oscuro)
+  ctx.fillStyle = "#6BBF00";
+  ctx.fillRect(this.x, this.top - lipHeight, this.w, lipHeight);
+
+  // Tubo inferior
+  ctx.fillStyle = "#7CFC00";
+  ctx.beginPath();
+  ctx.roundRect(this.x, canvas.height - this.bottom, this.w, this.bottom, radius);
+  ctx.fill();
+
+  // borde inferior
+  ctx.fillStyle = "#6BBF00";
+  ctx.fillRect(this.x, canvas.height - this.bottom, this.w, lipHeight);
+
+  ctx.shadowBlur = 0; // Reset shadow
+}
+
+    hits(bird) {
+      const bx = bird.x, by = bird.y, bw = bird.width, bh = bird.height;
+      return (
+        (bx + bw > this.x && bx < this.x + this.w) &&
+        (by < this.top || by + bh > canvas.height - this.bottom)
+      );
+    }
+  }
+
+  if (!CanvasRenderingContext2D.prototype.roundRect) {
+    CanvasRenderingContext2D.prototype.roundRect = function (x, y, width, height, radius) {
+      this.beginPath();
+      this.moveTo(x + radius, y);
+      this.lineTo(x + width - radius, y);
+      this.quadraticCurveTo(x + width, y, x + width, y + radius);
+      this.lineTo(x + width, y + height - radius);
+      this.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      this.lineTo(x + radius, y + height);
+      this.quadraticCurveTo(x, y + height, x, y + height - radius);
+      this.lineTo(x, y + radius);
+      this.quadraticCurveTo(x, y, x + radius, y);
+      this.closePath();
+    };
+  }
+
+  function drawBackground() {
+    ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+  }
+
+  function updateGame() {
+    if (gameOver) {
+      ctx.font = "40px Arial";
+      ctx.fillStyle = "red";
+      ctx.fillText("Game Over", canvas.width / 2 - 100, canvas.height / 2);
+      ctx.font = "20px Arial";
+      ctx.fillText("Tiempo: " + Math.floor(score) + "s", canvas.width / 2 - 40, canvas.height / 2 + 40);
+      return;
+    }
+
+    drawBackground();
+    bird.update();
+    bird.draw();
+
+    if (frames % 160 === 0) {
+      pipes.push(new Pipe());
+    }
+
+    for (let i = pipes.length - 1; i >= 0; i--) {
+      pipes[i].update();
+      pipes[i].draw();
+
+      if (pipes[i].hits(bird)) {
+        gameOver = true;
+      }
+
+      if (pipes[i].x + pipes[i].w < 0) {
+        pipes.splice(i, 1);
+      }
+    }
+
+    score = (Date.now() - startTime) / 1000;
+
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "#fff";
+    ctx.fillText("Tiempo: " + Math.floor(score) + "s", 20, 40);
+
+    frames++;
+    requestAnimationFrame(updateGame);
+  }
+
+  function startGame() {
+    document.getElementById("menu").style.display = "none";
+    gameOver = false;
+    score = 0;
+    frames = 0;
+    pipes = [];
+    bird.y = canvas.height / 2;
+    bird.velocity = 0;
+    startTime = Date.now();
+    updateGame();
+  }
+
+  // Controles
+  window.addEventListener("keydown", e => {
+    if (e.code === "Space" || e.code === "ArrowUp") bird.flap();
+  });
+
+  window.addEventListener("click", () => bird.flap());
+  window.addEventListener("touchstart", () => bird.flap());
+
+  document.getElementById("startButton").addEventListener("click", startGame);
+</script>
+
+</body>
+</html>
