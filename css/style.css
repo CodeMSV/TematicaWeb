@@ -173,4 +173,27 @@ main > div {
   z-index: -1;
 }
 
+.card-title {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card-text {
+  font-family: 'Cal Sans', sans-serif;
+  color: #333;
+}
+
+.card a {
+  color: #00a8ff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #ff4081;
+  text-decoration: underline;
+}
+
+
 
