@@ -13,8 +13,8 @@
   --indicator-color2: #e78c89;
   --indicator-color3: #81cb71;
   --transition-speed: 0.3s;
-  --bg-image: url("/img/backgroundtop.webp"); 
-  --bg-image2: url("/img/backgroundtile.webp");
+  --bg-image: url("../img/backgroundtop.webp"); 
+  --bg-image2: url("../img/backgroundtile.webp");
 }
 
 body {
