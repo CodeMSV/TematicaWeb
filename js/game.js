@@ -104,8 +104,8 @@ class Enemy {
     this.x = canvas.width + Math.random() * 400;
     this.baseY = Math.random() * (canvas.height - 200) + 100;
     this.y = this.baseY;
-    this.w = 80;
-    this.h = 80;
+    this.w = 70;
+    this.h = 70;
     this.speed = 3.5;
     this.angle = Math.random() * Math.PI * 2;
     this.amplitude = 30;

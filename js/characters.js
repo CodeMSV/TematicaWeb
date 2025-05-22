@@ -1,3 +1,5 @@
+"use strict";
+
 const options = document.querySelectorAll(".option");
 const mainView = document.getElementById("main-view");
 
