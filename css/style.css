@@ -1,7 +1,7 @@
 /* css/style.css */
 @import url("https://fonts.cdnfonts.com/css/powerpuff-girls");
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap");
 
 :root {
   --navbar-bg: #000;
@@ -16,12 +16,12 @@
   --transition-speed: 0.3s;
   --bg-image: url("../img/backgroundtop.webp");
   --bg-image2: url("../img/backgroundtile.webp");
-  
+
   /* Variables para modo claro */
   --body-bg: #fff;
   --text-color: #333;
   --card-bg: #fff;
-  --card-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   --card-text: #333;
   --card-link: #00a8ff;
   --card-link-hover: #ff4081;
@@ -34,7 +34,7 @@ body.dark-mode {
   --body-bg: #121212;
   --text-color: #ddd;
   --card-bg: #1e1e1e;
-  --card-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   --card-text: #bbb;
   --card-link: #4aa3ff;
   --card-link-hover: #ff6699;
@@ -59,8 +59,7 @@ body {
   background-color: var(--navbar-bg);
   padding: var(--navbar-padding);
   transition: padding var(--transition-speed),
-              background-color var(--transition-speed),
-              box-shadow var(--transition-speed);
+    background-color var(--transition-speed), box-shadow var(--transition-speed);
   backdrop-filter: blur(6px);
 }
 #mainNav.shrink {
@@ -89,8 +88,10 @@ body {
 .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: 0; left: 0;
-  width: 100%; height: var(--indicator-height);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--indicator-height);
   background: linear-gradient(
     to right,
     var(--indicator-color1) 0%,
@@ -118,8 +119,11 @@ main > div {
   position: relative;
   margin-top: calc(-1 * var(--navbar-height));
   padding-top: var(--navbar-height);
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 90%
+    ),
     var(--bg-image);
   background-position: bottom, top center;
   background-repeat: no-repeat, no-repeat;
@@ -146,9 +150,15 @@ main > div {
 .has-bg-image2::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 150px;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: -1;
 }
 /* ----------------------------------
@@ -162,12 +172,12 @@ main > div {
   font-size: 2.5rem;
   font-weight: bold;
   background: linear-gradient(
-    90deg, 
-    #00a8ff 0%,      
+    90deg,
+    #00a8ff 0%,
     #00a8ff 22%,
-    #ff4081 28%,     
+    #ff4081 28%,
     #ff4081 56%,
-    #4caf50 62%,     
+    #4caf50 62%,
     #4caf50 100%
   );
   -webkit-background-clip: text;
@@ -175,7 +185,7 @@ main > div {
   background-clip: text;
   text-fill-color: transparent;
   /* Sombra para mayor legibilidad */
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
   margin-bottom: 0;
 }
 #inicio img {
@@ -189,7 +199,7 @@ main > div {
 .video-container {
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
 }
@@ -225,17 +235,18 @@ main > div {
 .card {
   background-color: var(--card-bg);
   box-shadow: var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
   border-radius: 8px;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-title {
-  font-family: 'Cal Sans', sans-serif;
+  font-family: "Cal Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-color);
@@ -243,7 +254,7 @@ main > div {
 }
 
 .card-text {
-  font-family: 'Cal Sans', sans-serif;
+  font-family: "Cal Sans", sans-serif;
   color: var(--card-text);
   transition: color 0.3s ease;
 }
@@ -297,8 +308,11 @@ body.dark-mode .navbar-nav .nav-link.active::after {
 }
 
 body.dark-mode .has-bg-image {
-  background-image:
-    linear-gradient(to bottom, rgba(18,18,18,0) 0%, #121212 90%),
+  background-image: linear-gradient(
+      to bottom,
+      rgba(18, 18, 18, 0) 0%,
+      #121212 90%
+    ),
     url("../img/backgroundtopnight.png");
   background-position: bottom, top center;
   background-repeat: no-repeat, no-repeat;
@@ -311,7 +325,7 @@ body.dark-mode .has-bg-image2::before {
 }
 
 body.dark-mode .has-bg-image2::after {
-  background: linear-gradient(to bottom, #121212 0%, rgba(18,18,18,0) 100%);
+  background: linear-gradient(to bottom, #121212 0%, rgba(18, 18, 18, 0) 100%);
 }
 
 /* Ajustes del video en modo oscuro */
@@ -359,17 +373,66 @@ body.dark-mode footer {
   transition: border-color 0.3s ease;
 }
 
-/* Mostrar el borde solo en hover */
 #darkModeToggle:hover {
   border-color: white;
 }
 
-/* Para el modo oscuro */
 body.dark-mode #darkModeToggle {
   border: 1px solid transparent;
 }
 
 body.dark-mode #darkModeToggle:hover {
   border-color: white;
+}
+
+@media (max-width: 991.98px) {
+  #inicio .col-md-7 {
+    display: none !important;
+  }
+
+  #inicio .col-md-5 {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+  display: inline-block !important;
+  width: auto !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100% !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+@media (max-width: 575.98px) {
+  #inicio .col-12.col-md-7 {
+    display: none !important;
+  }
+
+  #inicio .col-12.col-sm-12.col-md-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+
+#capitulos .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#capitulos .card-body .card-text {
+  flex: 1 1 auto;
+  margin-bottom: 1rem; 
+}
+
+#capitulos .card-body .text-decoration-none {
+  margin-top: auto;
 }
 
