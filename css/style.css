@@ -10,9 +10,9 @@
   --navbar-padding-shrink: 0.5rem 1rem;
   --navbar-height: 60px;
   --indicator-height: 4px;
-  --indicator-color1: #33ace3;
-  --indicator-color2: #e78c89;
-  --indicator-color3: #81cb71;
+  --indicator-color1: #00c6ff;
+  --indicator-color2: #ff3cac;
+  --indicator-color3: #00ff90;
   --transition-speed: 0.3s;
   --bg-image: url("../img/backgroundtop.webp");
   --bg-image2: url("../img/backgroundtile.webp");
@@ -100,7 +100,6 @@ body {
     var(--indicator-color3) 66.66%,
     var(--indicator-color3) 100%
   );
-  border-radius: 4px 4px 0 0;
 }
 
 .img-fluid {
