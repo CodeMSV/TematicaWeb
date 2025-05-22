@@ -322,3 +322,26 @@ body.dark-mode .close-video-btn {
 body.dark-mode .close-video-btn:hover {
   background: #444 !important;
 }
+
+@media (max-width: 575.98px) {
+  /* Hacer el contenedor de info más ancho y con más padding */
+  .hero-info {
+    max-width: 90% !important;      /* casi todo el ancho de la pantalla */
+    padding: 1.5rem !important;     /* más espacio interior */
+    bottom: 1rem !important;        /* para que no suba demasiado */
+    left: 35% !important;
+    transform: translateX(-50%) !important; /* centrar horizontalmente */
+  }
+
+  /* Ajustar el tamaño del título */
+  .hero-info h2 {
+    font-size: 1.4rem !important;    /* un poco más pequeño */
+    line-height: 1.2 !important;     /* evitar saltos de línea extra */
+  }
+
+  /* Ajustar también el párrafo dentro */
+  .hero-info p {
+    font-size: 0.85rem !important;   /* mejorar legibilidad sin desbordar */
+    line-height: 1.4 !important;
+  }
+}
