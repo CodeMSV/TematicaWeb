@@ -120,27 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Funcionalidad de modo oscuro
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  
+  // Verificar que el botón existe
+  if (!darkModeToggle) {
+    console.error('No se encontró el botón de modo oscuro');
+    return;
+  }
 
-// Función para activar/desactivar modo oscuro
-    const setDarkMode = (enabled) => {
-      if (enabled) {
-        body.classList.add('dark-mode');
-        darkModeToggle.textContent = '☀️'; // Icono sol
-      } else {
-        body.classList.remove('dark-mode');
-        darkModeToggle.textContent = '🌙'; // Icono luna
-      }
-      localStorage.setItem('darkMode', enabled ? 'true' : 'false');
-    };
-
-    // Evento click toggle modo oscuro
-    darkModeToggle.addEventListener('click', () => {
-      const enabled = body.classList.contains('dark-mode');
-      setDarkMode(!enabled);
-    });
-
-    // Al cargar, lee preferencia guardada
-    const savedDarkMode = localStorage.getItem('darkMode');
-    if (savedDarkMode === 'true') {
-      setDarkMode(true);
+  // Función para activar/desactivar modo oscuro
+  const setDarkMode = (enabled) => {
+    if (enabled) {
+      body.classList.add('dark-mode');
+      darkModeToggle.textContent = '☀️'; // Icono sol
+    } else {
+      body.classList.remove('dark-mode');
+      darkModeToggle.textContent = '🌙'; // Icono luna
     }
+    localStorage.setItem('darkMode', enabled ? 'true' : 'false');
+  };
+
+  // Evento click toggle modo oscuro
+  darkModeToggle.addEventListener('click', () => {
+    const enabled = body.classList.contains('dark-mode');
+    setDarkMode(!enabled);
+  });
+
+  // Al cargar, lee preferencia guardada
+  const savedDarkMode = localStorage.getItem('darkMode');
+  if (savedDarkMode === 'true') {
+    setDarkMode(true);
+  }
+});
