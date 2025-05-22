@@ -185,13 +185,19 @@ function startGame() {
 function endGame() {
   gameOver = true;
   document.getElementById("gameOver").style.display = "flex";
-  document.getElementById("finalScore").innerText = `Tiempo: ${Math.floor(
-    score
-  )}s`;
+  document.getElementById("finalScore").innerText = `Tiempo: ${Math.floor(score)}s`;
+  document.getElementById("finalScore").style.color = "#FF69B4";
+  document.getElementById("finalScore").style.fontFamily = "'Powerpuff Girls', sans-serif";
+  document.getElementById("finalScore").style.fontSize = "28px";
+  document.getElementById("finalScore").style.textShadow = "2px 2px 4px black";
 }
 
 function restartGame() {
   startGame();
+}
+
+function exitGame() {
+  window.location.href = "../index.html";
 }
 
 // Controles
