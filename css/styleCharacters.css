@@ -84,9 +84,9 @@ body {
   height: auto;
 }
 
-.bg-blossom { background-color: #ff69b4; transition: all 0.5s ease-in-out; }
-.bg-bubbles { background-color: #add8e6; transition: all 0.5s ease-in-out; }
-.bg-buttercup { background-color: #90ee90; transition: all 0.5s ease-in-out; }
+.bg-blossom { background-color: #ff3cac; transition: all 0.5s ease-in-out; }
+.bg-bubbles { background-color: #00c6ff; transition: all 0.5s ease-in-out; }
+.bg-buttercup { background-color: #00ff90; transition: all 0.5s ease-in-out; }
 
 .option {
   position: relative;
