@@ -164,6 +164,7 @@ function updateGame() {
   ctx.fillStyle = "#fff";
   ctx.fillText("Tiempo: " + Math.floor(score) + "s", 20, 40);
 
+
   frames++;
   requestAnimationFrame(updateGame);
 }
