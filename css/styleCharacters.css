@@ -94,13 +94,13 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* === MODIFICACIÓN 1: “Levitación” de la imagen central === */
 @keyframes float {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-15px); }
+  50%  { transform: translateY(-55px); }
   100% { transform: translateY(0); }
 }
 .hero-img {
@@ -108,7 +108,7 @@ body {
   z-index: 1;
   max-width: 80%;
   max-height: 80%;
-  animation: float 4s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
   transition: opacity var(--transition-speed);
 }
 
