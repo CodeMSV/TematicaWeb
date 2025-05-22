@@ -162,7 +162,7 @@ function updateGame() {
   score = (Date.now() - startTime) / 1000;
   ctx.font = "20px Arial";
   ctx.fillStyle = "#fff";
-  ctx.fillText("Tiempo: " + Math.floor(score) + "s", 20, 40);
+  ctx.fillText("Tiempo: " + Math.floor(score) + "s", 20, 100);
 
 
   frames++;
