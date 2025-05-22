@@ -84,8 +84,6 @@ body {
   height: auto;
 }
 
-/* … tus estilos originales intactos de “INICIO” y demás … */
-
 .bg-blossom { background-color: #ff69b4; transition: all 0.5s ease-in-out; }
 .bg-bubbles { background-color: #add8e6; transition: all 0.5s ease-in-out; }
 .bg-buttercup { background-color: #90ee90; transition: all 0.5s ease-in-out; }
@@ -97,7 +95,7 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-/* === MODIFICACIÓN 1: “Levitación” de la imagen central === */
+/* === Animación de "Levitación" de la imagen central === */
 @keyframes float {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-55px); }
@@ -110,10 +108,10 @@ body {
   max-height: 80%;
   animation: float 3s ease-in-out infinite;
   transition: opacity var(--transition-speed);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
-/* === MODIFICACIÓN 2: Hover para ampliar vídeo y mostrar texto === */
-/* Vídeo oculto por defecto */
+/* === Vídeo oculto por defecto === */
 .hover-video {
   position: absolute;
   top: 0; left: 0;
@@ -126,45 +124,139 @@ body {
   z-index: 2;
 }
 
-/* Caja de info (título + texto), oculta por defecto */
+/* === Caja de info (título + texto), oculta por defecto === */
 .hero-info {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  max-width: 50%;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 45%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.5rem;
   color: #fff;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: 3;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Al hacer hover: vídeo visible, la imagen desaparece y aparece el texto */
-.option:hover .hover-video {
-  opacity: 1;
-  transform: scale(1.1);
+.hero-info h2 {
+  font-family: "Powerpuff Girls", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: normal;
 }
-.option:hover .hero-img {
+
+.hero-info p {
+  font-family: "Cal Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Alternativa: Texto en la esquina superior */
+.hero-info.top-corner {
+  top: 1rem;
+  bottom: auto;
+  left: 1rem;
+  right: auto;
+  max-width: 35%;
+}
+
+/* Alternativa: Texto centrado con fondo mínimo */
+.hero-info.center-minimal {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  max-width: 40%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+  
+
+/* === Botón de cerrar video === */
+.close-video-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.close-video-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1);
+}
+
+/* === Estados activos (cuando se hace clic) === */
+.option.video-active .hover-video {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.option.video-active .hero-img {
   opacity: 0;
 }
-.option:hover .hero-info {
+
+.option.video-active .hero-info {
   opacity: 1;
   transform: translateY(0);
+  animation: slideInUp 0.6s ease-out;
 }
 
-/* Expansión fullscreen de la columna activa */
-#main-view:hover .option:not(:hover) {
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option.video-active .close-video-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Expansión fullscreen de la columna activa === */
+#main-view.video-mode .option:not(.video-active) {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.5s, opacity 0.5s ease;
 }
-.option:hover {
+
+.option.video-active {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   margin: 0; padding: 0; border-radius: 0;
   box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-  z-index: 3;
+  z-index: 10;
 }
