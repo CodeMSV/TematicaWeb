@@ -251,7 +251,6 @@ main > div {
 body.dark-mode {
   background-color: #121212;
   color: #ddd;
-  background-image: url("../img/backgroundtilenight.png");
 }
 
 body.dark-mode #mainNav {
