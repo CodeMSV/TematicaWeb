@@ -21,10 +21,6 @@ body {
   margin: 0;
   padding-top: var(--navbar-height);
   font-family: "Powerpuff Girls", sans-serif;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
 }
 
 #mainNav,
@@ -93,6 +89,14 @@ body {
   max-width: 70%;
   height: auto;
 }
+
+/* ----------------------------------
+   Separación entre todas las secciones
+   ---------------------------------- */
+main > div {
+  margin-bottom: 3rem;
+}
+
 
 .has-bg-image {
   position: relative;

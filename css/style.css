@@ -46,9 +46,6 @@ body {
   margin: 0;
   padding-top: var(--navbar-height);
   font-family: "Powerpuff Girls", sans-serif;
-  background-color: var(--body-bg);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #mainNav,
@@ -118,6 +115,43 @@ main > div {
   margin-bottom: 3rem;
 }
 
+.has-bg-image {
+  position: relative;
+  margin-top: calc(-1 * var(--navbar-height));
+  padding-top: var(--navbar-height);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 90%),
+    var(--bg-image);
+  background-position: bottom, top center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 150px, cover;
+}
+
+.has-bg-image2 {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+.has-bg-image2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image2);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: auto;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+.has-bg-image2::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
 /* ----------------------------------
    Sección INICIO
    ---------------------------------- */
@@ -224,57 +258,6 @@ main > div {
 .card a:hover {
   color: var(--card-link-hover);
   text-decoration: underline;
-}
-
-/* ----------------------------------
-   Footer
-   ---------------------------------- */
-footer {
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* ----------------------------------
-   Backgrounds con imágenes
-   ---------------------------------- */
-.has-bg-image {
-  position: relative;
-  margin-top: calc(-1 * var(--navbar-height));
-  padding-top: var(--navbar-height);
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--body-bg) 90%),
-    var(--bg-image);
-  background-position: bottom, top center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100% 150px, cover;
-  /*transition: background-image 0.3s ease;*/
-}
-
-.has-bg-image2 {
-  position: relative;
-  overflow: hidden;
-}
-.has-bg-image2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--bg-image2);
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: auto;
-  filter: blur(8px);
-  z-index: -2;
-  /*transition: background-image 0.3s ease;*/	
-}
-.has-bg-image2::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, var(--body-bg) 0%, rgba(255,255,255,0) 100%);
-  z-index: -1;
-  /*transition: background-image 0.3s ease;*/
 }
 
 /* ==================================
@@ -390,3 +373,4 @@ body.dark-mode #darkModeToggle {
 body.dark-mode #darkModeToggle:hover {
   border-color: white;
 }
+
