@@ -260,3 +260,66 @@ body {
   box-shadow: 0 12px 24px rgba(0,0,0,0.5);
   z-index: 10;
 }
+
+/* Colores vivos para los títulos de cada supernena */
+.option[data-hero="bubbles"] .hero-info h2 {
+  color: #00c6ff; /* Azul vivo para Burbuja */
+}
+.option[data-hero="blossom"] .hero-info h2 {
+  color: #ff3cac; /* Rosa vivo para Pétalo */
+}
+.option[data-hero="buttercup"] .hero-info h2 {
+  color: #00ff90; /* Verde vivo para Cactus */
+}
+
+#darkModeToggle {
+  /* Quitar el borde por defecto */
+  border: 1px solid transparent;
+  /* Agregar una transición suave */
+  transition: border-color 0.3s ease;
+}
+
+/* Mostrar el borde solo en hover */
+#darkModeToggle:hover {
+  border-color: white;
+}
+
+/* Para el modo oscuro */
+body.dark-mode #darkModeToggle {
+  border: 1px solid transparent;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  border-color: white;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark-mode #mainNav {
+  background-color: #121212;
+}
+
+body.dark-mode #mainNav.shrink {
+  background-color: rgba(18, 18, 18, 0.9);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .navbar-nav .nav-link {
+  color: #ddd;
+}
+
+body.dark-mode .navbar-nav .nav-link.active {
+  color: #ddd;
+}
+
+body.dark-mode .close-video-btn {
+  background: #222 !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+}
+body.dark-mode .close-video-btn:hover {
+  background: #444 !important;
+}
