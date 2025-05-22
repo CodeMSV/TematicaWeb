@@ -1,197 +1,287 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Las Supernenas</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.cdnfonts.com/css/powerpuff-girls" rel="stylesheet" />
-  <script defer src="js/bootstrap.bundle.js"></script>
-  <script defer src="js/script.js"></script>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
-  <header>
-    <nav id="mainNav" class="navbar fixed-top navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="img/logo.webp" alt="Logo" class="navbar-logo me-2" />
-        </a>
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarNavContent"
-                aria-controls="navbarNavContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end"
-             id="navbarNavContent">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="views/characters.html">Personajes</a></li>
-            <li class="nav-item"><a class="nav-link" href="views/enemigos.html">Enemigos</a></li>
-            <li class="nav-item"><a class="nav-link" href="views/game.html">Juego</a></li>
-            <li class="nav-item"><a class="nav-link" href="views/contact.html">Contactar</a></li>
-          </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Las Supernenas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/powerpuff-girls"
+      rel="stylesheet"
+    />
+    <script defer src="js/bootstrap.bundle.js"></script>
+    <script defer src="js/script.js"></script>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+    <header>
+      <nav id="mainNav" class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/logo.webp" alt="Logo" class="navbar-logo me-2" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavContent"
+            aria-controls="navbarNavContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavContent"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="views/characters.html">Personajes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="views/enemigos.html">Enemigos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="views/game.html">Juego</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="views/contact.html">Contactar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- INICIO -->
+      <div class="has-bg-image">
+        <div class="container">
+          <section id="inicio" class="bg-transparent my-6 p-4">
+            <div class="row">
+              <div class="col-12 col-md-5">
+                <p>Las Supernenas</p>
+              </div>
+              <div class="col-12 col-md-7 text-end">
+                <img
+                  src="img/showpano.webp"
+                  alt="Foto de las supernenas juntas."
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </nav>
-  </header>
 
-  <main>
-    <!-- INICIO -->
-    <div class="has-bg-image">
-      <div class="container">
-        <section id="inicio" class="bg-transparent my-6 p-4">
-          <div class="row">
-            <div class="col-12 col-md-5">
-              <p>Las Supernenas</p>
+      <!-- HISTORIA -->
+      <div class="has-bg-image2">
+        <div class="container">
+          <section id="historia" class="row py-5 bg-transparent text-dark">
+            <h2 class="display-4 col-12">Historia</h2>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <p class="lead text-content mt-4">
+                  Las Chicas Superpoderosas (The Powerpuff Girls) fue una serie
+                  animada estadounidense creada por Craig McCraken y se estrenó
+                  el 18 de noviembre de 1998 en Estados Unidos. Originalmente
+                  fue producida por Cartoon Network Studios y, por lo tanto,
+                  propietaria actual de los derechos.
+                </p>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="video-container">
+                  <video
+                    src="img/the-powerpuff-girls-intro-original-hd.mp4"
+                    muted
+                    autoplay
+                    playsinline
+                    controls
+                  >
+                    Tu navegador no soporta <code>video</code>.
+                  </video>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-md-7 text-end">
-              <img src="img/showpano.webp" alt="Foto de las supernenas juntas." class="img-fluid" />
+          </section>
+
+          <!-- CAPÍTULOS -->
+          <section id="capitulos" class="py-5">
+            <div class="container">
+              <h2 class="text-center mb-5 display-4">Capitulos</h2>
+              <div class="row g-4">
+                <!-- Capítulo 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap1.webp"
+                      class="card-img-top"
+                      alt="Capítulo 1"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        1. Monkey See, Doggie Do/Mommy Fearest
+                      </h5>
+                      <p class="card-text small">
+                        Mojo desata una maldición en Townsville que convierte a
+                        todos en perros...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap2.webp"
+                      class="card-img-top"
+                      alt="Capítulo 2"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        2. Insect Inside/Powerpuff Bluff
+                      </h5>
+                      <p class="card-text small">
+                        Un villano quiere infestar Townsville con cucarachas.
+                        Las chicas lo enfrentan...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap3.webp"
+                      class="card-img-top"
+                      alt="Capítulo 3"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">3. Octi Evil/Geshundfight</h5>
+                      <p class="card-text small">
+                        Cuando Him manipula a Bubbles, ella pelea con sus
+                        hermanas...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap4.webp"
+                      class="card-img-top"
+                      alt="Capítulo 4"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">4. Buttercrush/Fuzzy Logic</h5>
+                      <p class="card-text small">
+                        Buttercup se enamora de Ace, el líder de los Gangreen
+                        Gang...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 5 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap5.webp"
+                      class="card-img-top"
+                      alt="Capítulo 5"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">5. Speed Demon/Flower Power</h5>
+                      <p class="card-text small">
+                        Una fuerza supersónica siembra el caos y las chicas
+                        deben apresurarse para salvar Townsville...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 6 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap6.webp"
+                      class="card-img-top"
+                      alt="Capítulo 6"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">6. Byte-Sized/Bedlam</h5>
+                      <p class="card-text small">
+                        El Profesor Utonio crea un aparato que encoge
+                        accidentalmente a las Supernenas...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 7 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap7.webp"
+                      class="card-img-top"
+                      alt="Capítulo 7"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        7. Shrishark/All's Well That Ends Well
+                      </h5>
+                      <p class="card-text small">
+                        Un tiburón mecánico amenaza la costa y las Supernenas
+                        luchan para proteger a los ciudadanos...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Capítulo 8 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card h-100 shadow-sm border-0">
+                    <img
+                      src="img/cap8.webp"
+                      class="card-img-top"
+                      alt="Capítulo 8"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        8. Pizza Thing/A Very Special Blossom
+                      </h5>
+                      <p class="card-text small">
+                        La Pizza Thing aterroriza Townsville con pizzas
+                        explosivas y Blossom aprende una valiosa lección...
+                      </p>
+                      <a href="#" class="text-decoration-none">More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-    </div>
+    </main>
 
-    <!-- HISTORIA -->
-    <div class="has-bg-image2">
-      <div class="container">
-        <section id="historia" class="row py-5 bg-transparent text-dark">
-          <h2 class="display-4 col-12">Historia</h2>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <p class="lead text-content mt-4">
-                Las Chicas Superpoderosas (The Powerpuff Girls) fue una serie animada
-                estadounidense creada por Craig McCraken y se estrenó el 18 de noviembre de
-                1998 en Estados Unidos. Originalmente fue producida por Cartoon Network
-                Studios y, por lo tanto, propietaria actual de los derechos.
-              </p>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="video-container">
-                <video src="img/the-powerpuff-girls-intro-original-hd.mp4"
-                       muted autoplay playsinline controls>
-                  Tu navegador no soporta <code>video</code>.
-                </video>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <!-- CAPÍTULOS -->
-        <section id="capitulos" class="py-5">
-          <div class="container">
-            <h2 class="text-center mb-5 display-4">Capitulos</h2>
-            <div class="row g-4">
-
-              <!-- Capítulo 1 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap1.webp" class="card-img-top" alt="Capítulo 1">
-                  <div class="card-body">
-                    <h5 class="card-title">1. Monkey See, Doggie Do/Mommy Fearest</h5>
-                    <p class="card-text small">Mojo desata una maldición en Townsville que convierte a todos en perros...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 2 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap2.webp" class="card-img-top" alt="Capítulo 2">
-                  <div class="card-body">
-                    <h5 class="card-title">2. Insect Inside/Powerpuff Bluff</h5>
-                    <p class="card-text small">Un villano quiere infestar Townsville con cucarachas. Las chicas lo enfrentan...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 3 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap3.webp" class="card-img-top" alt="Capítulo 3">
-                  <div class="card-body">
-                    <h5 class="card-title">3. Octi Evil/Geshundfight</h5>
-                    <p class="card-text small">Cuando Him manipula a Bubbles, ella pelea con sus hermanas...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 4 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap4.webp" class="card-img-top" alt="Capítulo 4">
-                  <div class="card-body">
-                    <h5 class="card-title">4. Buttercrush/Fuzzy Logic</h5>
-                    <p class="card-text small">Buttercup se enamora de Ace, el líder de los Gangreen Gang...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 5 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap5.webp" class="card-img-top" alt="Capítulo 5">
-                  <div class="card-body">
-                    <h5 class="card-title">5. Speed Demon/Flower Power</h5>
-                    <p class="card-text small">Una fuerza supersónica siembra el caos y las chicas deben apresurarse para salvar Townsville...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 6 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap6.webp" class="card-img-top" alt="Capítulo 6">
-                  <div class="card-body">
-                    <h5 class="card-title">6. Byte-Sized/Bedlam</h5>
-                    <p class="card-text small">El Profesor Utonio crea un aparato que encoge accidentalmente a las Supernenas...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 7 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap7.webp" class="card-img-top" alt="Capítulo 7">
-                  <div class="card-body">
-                    <h5 class="card-title">7. Shrishark/All's Well That Ends Well</h5>
-                    <p class="card-text small">Un tiburón mecánico amenaza la costa y las Supernenas luchan para proteger a los ciudadanos...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Capítulo 8 -->
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                  <img src="img/cap8.webp" class="card-img-top" alt="Capítulo 8">
-                  <div class="card-body">
-                    <h5 class="card-title">8. Pizza Thing/A Very Special Blossom</h5>
-                    <p class="card-text small">La Pizza Thing aterroriza Townsville con pizzas explosivas y Blossom aprende una valiosa lección...</p>
-                    <a href="#" class="text-decoration-none">More</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
-  </main>
-
-  <footer class="text-center py-4 bg-dark text-white">
-    © 2025 Las Supernenas
-  </footer>
-
-</body>
+    <footer class="text-center py-4 bg-dark text-white">
+      © 2025 Las Supernenas
+    </footer>
+  </body>
 </html>
