@@ -37,7 +37,6 @@ body {
               background-color var(--transition-speed),
               box-shadow var(--transition-speed);
   backdrop-filter: blur(6px);
-  background-image: var(--bg-image); 
   background-size: cover;
   background-position: center center;
 }
@@ -152,6 +151,7 @@ main > div {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  
   /* Sombra para mayor legibilidad */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
   margin-bottom: 0;
