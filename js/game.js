@@ -1,8 +1,10 @@
 "use strict";
 
+// Get canvas and rendering context
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+// Adjust canvas to fill the window
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -10,6 +12,7 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
+// Load images for background, player, and enemy
 const bgImg = new Image();
 const birdImg = new Image();
 const enemyImg = new Image();
@@ -21,6 +24,7 @@ enemyImg.src = "../img/mojo-jojo-enemy.gif";
 let imagesLoaded = 0;
 const totalImages = 3;
 
+// Enable start button once all assets are ready
 function checkAllLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
@@ -32,10 +36,12 @@ function checkAllLoaded() {
   }
 }
 
+// Track image loading
 bgImg.onload = checkAllLoaded;
 birdImg.onload = checkAllLoaded;
 enemyImg.onload = checkAllLoaded;
 
+// Physics constants for bird movement
 const gravity = 0.3; 
 const lift = -6; 
 let gameOver = false;
@@ -44,16 +50,18 @@ let startTime = null;
 let frames = 0;
 let enemies = [];
 
-
+// Background scrolling offsets and speed
 let bgX1 = 0;
 let bgX2 = 0;
 let bgScrollSpeed = 10;
 
+// Initialize second background image position once loaded
 bgImg.onload = () => {
   bgX2 = bgImg.width;
   checkAllLoaded();
 };
 
+// Draw two tiled background images for continuous scroll
 function drawScrollingBackground() {
   bgX1 -= bgScrollSpeed;
   bgX2 -= bgScrollSpeed;
@@ -65,6 +73,7 @@ function drawScrollingBackground() {
   ctx.drawImage(bgImg, bgX2, 0, bgImg.width, canvas.height);
 }
 
+// Define bird (player) properties and behaviors
 let bird = {
   x: 100,
   y: 200,
@@ -74,6 +83,7 @@ let bird = {
   update() {
     this.velocity += gravity;
     this.y += this.velocity;
+    // Check for collision with top/bottom bounds
     if (this.y + this.height > canvas.height || this.y < 0) {
       endGame();
     }
@@ -92,10 +102,12 @@ let bird = {
     ctx.restore();
   },
   flap() {
+    // Apply upward force
     this.velocity = lift;
   },
 };
 
+// Enemy class: spawns offscreen and oscillates vertically
 class Enemy {
   constructor() {
     this.x = canvas.width + Math.random() * 400;
@@ -111,6 +123,7 @@ class Enemy {
   update() {
     this.x -= this.speed;
     this.angle += 0.05;
+    // Oscillate around baseY
     this.y = this.baseY + Math.sin(this.angle) * this.amplitude;
   }
 
@@ -123,6 +136,7 @@ class Enemy {
       by = bird.y,
       bw = bird.width,
       bh = bird.height;
+    // Axis-aligned bounding box collision check
     return (
       bx < this.x + this.w &&
       bx + bw > this.x &&
@@ -132,6 +146,7 @@ class Enemy {
   }
 }
 
+// Main game loop: update, draw, spawn enemies, check collisions
 function updateGame() {
   if (gameOver) return;
 
@@ -139,10 +154,12 @@ function updateGame() {
   bird.update();
   bird.draw();
 
+  // Spawn a new enemy every 160 frames
   if (frames % 160 === 0) {
     enemies.push(new Enemy());
   }
 
+  // Update and render each enemy
   for (let i = enemies.length - 1; i >= 0; i--) {
     enemies[i].update();
     enemies[i].draw();
@@ -151,21 +168,23 @@ function updateGame() {
       endGame();
     }
 
+    // Remove offscreen enemies to free memory
     if (enemies[i].x + enemies[i].w < 0) {
       enemies.splice(i, 1);
     }
   }
 
+  // Update score based on elapsed time
   score = (Date.now() - startTime) / 1000;
   ctx.font = "20px Arial";
   ctx.fillStyle = "#fff";
   ctx.fillText("Tiempo: " + Math.floor(score) + "s", 20, 100);
 
-
   frames++;
   requestAnimationFrame(updateGame);
 }
 
+// Initialize game state and hide menus
 function startGame() {
   document.getElementById("menu").style.display = "none";
   document.getElementById("gameOver").style.display = "none";
@@ -179,6 +198,7 @@ function startGame() {
   updateGame();
 }
 
+// Display game over UI and final score
 function endGame() {
   gameOver = true;
   document.getElementById("gameOver").style.display = "flex";
@@ -197,7 +217,7 @@ function exitGame() {
   window.location.href = "../index.html";
 }
 
-// Controles
+// User input: flap on space, click, or touch
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space" || e.code === "ArrowUp") bird.flap();
 });

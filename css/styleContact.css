@@ -148,7 +148,6 @@ main > div {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  /* Sombra para mayor legibilidad */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
   margin-bottom: 0;
 }
@@ -297,20 +296,15 @@ body.dark-mode footer {
   color: #ddd;
 }
 
-/* Estilos personalizados para el botón de modo oscuro */
 #darkModeToggle {
-  /* Quitar el borde por defecto */
   border: 1px solid transparent;
-  /* Agregar una transición suave */
   transition: border-color 0.3s ease;
 }
 
-/* Mostrar el borde solo en hover */
 #darkModeToggle:hover {
   border-color: white;
 }
 
-/* Para el modo oscuro */
 body.dark-mode #darkModeToggle {
   border: 1px solid transparent;
 }

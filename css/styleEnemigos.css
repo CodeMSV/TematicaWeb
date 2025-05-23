@@ -150,7 +150,7 @@ main > div {
   background-clip: text;
   text-fill-color: transparent;
 
-  /* Sombra para mayor legibilidad */
+
   text-shadow: 3px 3px 10px rgba(0,0,0,0.15);
   margin-bottom: 0;
 }
@@ -159,13 +159,12 @@ main > div {
   height: auto;
 }
 
-
-/* Sección ENEMIGOS */
+/*Style to enemys section*/
 #enemigos {
   padding: 2rem 1rem;
 }
 
-/* Estilo general de las tarjetas */
+/*Tittle of the section*/
 #enemigos .card {
   border: none;
   border-radius: 1rem;
@@ -175,13 +174,12 @@ main > div {
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* Efecto hover en las tarjetas */
+/* Hover effect for cards */
 #enemigos .card:hover {
   transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-/* Título de las tarjetas */
 #enemigos .card-title {
   font-family: "Powerpuff Girls", sans-serif;
   font-size: 1.4rem;
@@ -191,7 +189,6 @@ main > div {
   margin-top: 2rem;
 }
 
-/* Texto descriptivo dentro de las tarjetas */
 #enemigos .card-text {
   font-family: "Righteous", cursive;
   font-size: 1rem;
@@ -199,14 +196,12 @@ main > div {
   text-align: center;
 }
 
-/* Imagen superior de las tarjetas */
 #enemigos .card-img-top {
   height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-/* Contenedor del cuerpo de las tarjetas */
 #enemigos .card-body {
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.9);
@@ -214,14 +209,12 @@ main > div {
   border-bottom-right-radius: 1rem;
 }
 
-/* contenedor exclusivo para imágenes */
 .enemigo-card .img-container {
   position: relative;
   height: 300px;
   overflow: hidden;
 }
 
-/* ambas imágenes en posición absoluta dentro de img-container */
 .enemigo-card .img-container img {
   position: absolute;
   top: 0; left: 0;
@@ -231,12 +224,11 @@ main > div {
   transition: opacity 0.3s ease;
 }
 
-/* GIF inicialmente oculto */
+/* Static image */
 .enemigo-card .img-container .gif-img {
   opacity: 0;
 }
 
-/* al hacer hover sobre toda la card, intercambiamos opacidades */
 .enemigo-card:hover .img-container .gif-img {
   opacity: 1;
 }
@@ -244,7 +236,6 @@ main > div {
   opacity: 0;
 }
 
-/* Modo oscuro variables y estilos */
 body.dark-mode {
   background-color: #121212;
   color: #ddd;
@@ -266,6 +257,7 @@ body.dark-mode .navbar-nav .nav-link {
 body.dark-mode .navbar-nav .nav-link.active {
   color: #ddd;
 }
+
 
 body.dark-mode .navbar-nav .nav-link.active::after {
   background: linear-gradient(
@@ -297,7 +289,6 @@ body.dark-mode .has-bg-image2::after {
   background: linear-gradient(to bottom, #121212 0%, rgba(18,18,18,0) 100%);
 }
 
-/* Estilos específicos de enemigos para modo oscuro */
 body.dark-mode #enemigos h2,
 body.dark-mode #enemigos .lead,
 body.dark-mode #enemigos .text-content {
@@ -330,20 +321,15 @@ body.dark-mode footer {
   color: #ddd;
 }
 
-/* Estilos personalizados para el botón de modo oscuro */
 #darkModeToggle {
-  /* Quitar el borde por defecto */
   border: 1px solid transparent;
-  /* Agregar una transición suave */
   transition: border-color 0.3s ease;
 }
 
-/* Mostrar el borde solo en hover */
 #darkModeToggle:hover {
   border-color: white;
 }
 
-/* Para el modo oscuro */
 body.dark-mode #darkModeToggle {
   border: 1px solid transparent;
 }
