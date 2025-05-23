@@ -94,7 +94,6 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-/* === Animación de "Levitación" de la imagen central === */
 @keyframes float {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-55px); }
@@ -110,7 +109,6 @@ body {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
-/* === Vídeo oculto por defecto === */
 .hover-video {
   position: absolute;
   top: 0; left: 0;
@@ -123,7 +121,6 @@ body {
   z-index: 2;
 }
 
-/* === Caja de info (título + texto), oculta por defecto === */
 .hero-info {
   position: absolute;
   bottom: 1rem;
@@ -161,7 +158,6 @@ body {
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* Alternativa: Texto en la esquina superior */
 .hero-info.top-corner {
   top: 1rem;
   bottom: auto;
@@ -170,7 +166,6 @@ body {
   max-width: 35%;
 }
 
-/* Alternativa: Texto centrado con fondo mínimo */
 .hero-info.center-minimal {
   top: 50%;
   bottom: auto;
@@ -185,7 +180,6 @@ body {
 
   
 
-/* === Botón de cerrar video === */
 .close-video-btn {
   position: absolute;
   top: 2rem;
@@ -212,7 +206,6 @@ body {
   transform: scale(1);
 }
 
-/* === Estados activos (cuando se hace clic) === */
 .option.video-active .hover-video {
   opacity: 1;
   transform: scale(1.05);
@@ -244,7 +237,6 @@ body {
   transform: scale(1);
 }
 
-/* === Expansión fullscreen de la columna activa === */
 #main-view.video-mode .option:not(.video-active) {
   visibility: hidden;
   opacity: 0;
@@ -260,30 +252,25 @@ body {
   z-index: 10;
 }
 
-/* Colores vivos para los títulos de cada supernena */
 .option[data-hero="bubbles"] .hero-info h2 {
-  color: #00c6ff; /* Azul vivo para Burbuja */
+  color: #00c6ff; 
 }
 .option[data-hero="blossom"] .hero-info h2 {
-  color: #ff3cac; /* Rosa vivo para Pétalo */
+  color: #ff3cac; 
 }
 .option[data-hero="buttercup"] .hero-info h2 {
-  color: #00ff90; /* Verde vivo para Cactus */
+  color: #00ff90; 
 }
 
 #darkModeToggle {
-  /* Quitar el borde por defecto */
   border: 1px solid transparent;
-  /* Agregar una transición suave */
   transition: border-color 0.3s ease;
 }
 
-/* Mostrar el borde solo en hover */
 #darkModeToggle:hover {
   border-color: white;
 }
 
-/* Para el modo oscuro */
 body.dark-mode #darkModeToggle {
   border: 1px solid transparent;
 }
@@ -324,24 +311,21 @@ body.dark-mode .close-video-btn:hover {
 }
 
 @media (max-width: 575.98px) {
-  /* Hacer el contenedor de info más ancho y con más padding */
   .hero-info {
-    max-width: 90% !important;      /* casi todo el ancho de la pantalla */
-    padding: 1.5rem !important;     /* más espacio interior */
-    bottom: 1rem !important;        /* para que no suba demasiado */
+    max-width: 90% !important;     
+    padding: 1.5rem !important;    
+    bottom: 1rem !important;       
     left: 35% !important;
-    transform: translateX(-50%) !important; /* centrar horizontalmente */
+    transform: translateX(-50%) !important; 
   }
 
-  /* Ajustar el tamaño del título */
   .hero-info h2 {
-    font-size: 1.4rem !important;    /* un poco más pequeño */
-    line-height: 1.2 !important;     /* evitar saltos de línea extra */
+    font-size: 1.4rem !important;    
+    line-height: 1.2 !important;     
   }
 
-  /* Ajustar también el párrafo dentro */
   .hero-info p {
-    font-size: 0.85rem !important;   /* mejorar legibilidad sin desbordar */
+    font-size: 0.85rem !important;   
     line-height: 1.4 !important;
   }
 }

@@ -10,7 +10,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Cargar imágenes
 const bgImg = new Image();
 const birdImg = new Image();
 const enemyImg = new Image();
@@ -37,27 +36,25 @@ bgImg.onload = checkAllLoaded;
 birdImg.onload = checkAllLoaded;
 enemyImg.onload = checkAllLoaded;
 
-const gravity = 0.3; // Movimiento más lento
-const lift = -6; // Subida más suave
+const gravity = 0.3; 
+const lift = -6; 
 let gameOver = false;
 let score = 0;
 let startTime = null;
 let frames = 0;
 let enemies = [];
 
-// Variables de fondo animado
+
 let bgX1 = 0;
 let bgX2 = 0;
 let bgScrollSpeed = 10;
 
-// Inicia posiciones de scroll cuando se carga el fondo
 bgImg.onload = () => {
   bgX2 = bgImg.width;
   checkAllLoaded();
 };
 
 function drawScrollingBackground() {
-  // Scroll horizontal
   bgX1 -= bgScrollSpeed;
   bgX2 -= bgScrollSpeed;
 
